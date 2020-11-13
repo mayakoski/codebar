@@ -17,36 +17,46 @@
     <h1 class="title">Generador de Codigos de Barras</h1>
   </header>
 
-  <main>
-    <form action="#" id="form" class="form">
-      <div class="form__field">
-        <label for="codigoActivo" class="form__label">Codigo Activo: </label>
-        <input type="text" id="codigoActivo" class="form__data">
-      </div>
+  <main class="main">
+    <section class='section section-form'>
+      <form action="#" id="form" class="form">
+        <div class="form__field">
+          <label for="codigoActivo" class="form__label">Codigo Activo: </label>
+          <input type="text" id="codigoActivo" class="form__data">
+        </div>
 
-      <div class="form__field">
-        <label for="descripcion">Descripción: </label>
-        <input type="text" id="descripcion" class="form__data">
-      </div>
+        <div class="form__field">
+          <label for="descripcion">Descripción: </label>
+          <input type="text" id="descripcion" class="form__data">
+        </div>
 
-      <div class="form__field">
-        <label for="etiquetaNum">Numero de etiquetas: </label>
-        <input id="etiquetaNum" type="number" name="etiquetaNum" value="5" step=5 min="5" class="form__data">
-      </div>
+        <div class="form__field">
+          <label for="etiquetaNum">Numero de etiquetas: </label>
+          <input id="etiquetaNum" type="number" name="etiquetaNum" value="5" step=5 min="5" class="form__data">
+        </div>
 
-      <div class="botones">
-        <button type="submit" id="btnGenerar" disabled class="btn btnColor">Generar</button>
-        <input type="button" disabled value="Imprimir Codigos" id="btnPrint" class="btn btnColor">
-        <input type="reset" value="Resetear" id="btnReset" disabled class="btn btnColor">
-      </div>
+        <div class="botones ">
+          <!-- <button type="submit" id="btnGenerar" disabled class="btn btnColor">Generar</button> -->
+          <input type="button" disabled value='Generar' id="btnGenerar" class="btn btnColor">
+          <input type="button" disabled value="Imprimir Codigos" id="btnPrint" class="btn btnColor">
+          <input type="reset" value="Resetear" id="btnReset" disabled class="btn btnColor">
+        </div>
 
-    </form>
+        <div class="form__logo">
+          <input type="file" id="file" class="file">
+          <img src="#" alt="" id="img" class="img">
+        </div>
 
+      </form>
+    </section>
 
+    <!-- <section class="section section-container"> -->
     <div id="contenedorCod" class="contenedorCod">
     </div>
+    <!-- </section> -->
 
   </main>
+
 
   <script src="./js/scripts.js" type="module"></script>
 </body>

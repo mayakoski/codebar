@@ -6,24 +6,30 @@ export function generarCodigos(
   numEtiquetas,
   btnGenerar,
   btnPrint,
-  descripcion
+  descripcion,
+  logo
 ) {
   // Crea un elemento <table> y un elemento <tbody>
   let tabla = d.createElement("table");
   let tblBody = d.createElement("tbody");
 
+  
   tabla.classList.add("modal__content");
-
+  
   d.addEventListener("click", (e) => {
     if (e.target.matches(btnGenerar)) {
+
+      const logoLoad = d.getElementById(logo)
+
       validateForm();
       let $numEtiquetas = d.querySelector(numEtiquetas).value;
       let descItem;
 
+      
       // Crea las celdas
       for (let i = 0; i < $numEtiquetas / 5; i++) {
         // Crea las hileras de la tabla
-        let hilera = d.createElement("tr");
+        let hilera = d.createElement("TR");
 
         for (let j = 0; j < 5; j++) {
           // Crea un elemento <td> y un nodo de texto, haz que el nodo de
@@ -40,7 +46,9 @@ export function generarCodigos(
 
           descItem.classList.add("descripcion");
           let logo = d.createElement("img");
-          logo.src = "./assets/logo.png";
+          (logoLoad.getAttribute('src')=='#') 
+            ? logo.src = "./assets/logo.png"
+            : logo.src = logoLoad.getAttribute('src');
           logo.classList.add("logo");
           let etiquetaCelda = d.createElementNS(
             "http://www.w3.org/2000/svg",
