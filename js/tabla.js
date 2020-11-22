@@ -7,23 +7,29 @@ export function generarCodigos(
   btnGenerar,
   btnPrint,
   descripcion,
-  logo
+  logo,
+  precio
 ) {
   // Crea un elemento <table> y un elemento <tbody>
   let tabla = d.createElement("table");
   let tblBody = d.createElement("tbody");
 
+  const tablaFragment = d.createDocumentFragment()
+  const tblBodyFragment = d.createDocumentFragment()
+
   
-  tabla.classList.add("modal__content");
+  tabla.classList.add("table");
   
   d.addEventListener("click", (e) => {
     if (e.target.matches(btnGenerar)) {
 
       const logoLoad = d.getElementById(logo)
+      // const precioVenta = d.getElementById(precio)
+
 
       validateForm();
       let $numEtiquetas = d.querySelector(numEtiquetas).value;
-      let descItem;
+      // let descItem;
 
       
       // Crea las celdas
@@ -36,12 +42,19 @@ export function generarCodigos(
           // texto sea el contenido de <td>, ubica el elemento <td> al final
           // de la hilera de la tabla
           let celda = d.createElement("td");
-          celda.classList.add("celda");
+          celda.classList.add("table__data");
 
-          let descItem = document.createElement("p");
+          let descItem = document.createElement("P");
+          let precioVenta = d.createElement('P')
+          
           let texto = document.createTextNode(
             d.querySelector(descripcion).value
           );
+
+          precioVenta.textContent = d.getElementById(precio).value   
+          precioVenta.classList.add('form__field-precio')  
+          console.log(precioVenta.textContent);
+
           descItem.appendChild(texto);
 
           descItem.classList.add("descripcion");
@@ -54,22 +67,27 @@ export function generarCodigos(
             "http://www.w3.org/2000/svg",
             "svg"
           );
+
           etiquetaCelda.classList.add("barcode");
           celda.appendChild(descItem);
           celda.appendChild(logo);
           celda.appendChild(etiquetaCelda);
+          celda.appendChild(precioVenta);
 
           hilera.appendChild(celda);
         }
 
         // agrega la hilera al final de la tabla (al final del elemento tblbody)
         tblBody.appendChild(hilera);
+        tblBodyFragment.appendChild(tblBody)
+
         // posiciona el <tbody> debajo del elemento <table>
-        tabla.appendChild(tblBody);
+        tabla.appendChild(tblBodyFragment);
+        tablaFragment.appendChild(tabla)
       }
 
       // appends <table> into <div>
-      contenedorCod.appendChild(tabla);
+      contenedorCod.appendChild(tablaFragment);
 
       // modifica el atributo "border" de la tabla y lo fija a "2";
       // tabla.setAttribute("border", "2");
