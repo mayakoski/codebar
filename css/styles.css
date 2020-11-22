@@ -6,7 +6,7 @@
   --second-color: #212121;
   --main-modal-color: rgba(189, 189, 189, 0.85);
   --second-modal-color: rgba(34, 34, 34, 0.85);
-  --container-width: 1200px;
+  --container-width: 100%;
 }
 
 *,
@@ -76,13 +76,23 @@ img {
   margin: 0 auto;
 }
 
+.form__label {
+  display: inline;
+}
+
 .form__field,
 .botones {
   grid-column: 1/2;
 }
-.form__logo {
+
+.form__field-precio {
   grid-column: 2;
   grid-row: 1/5;
+}
+
+.form__logo {
+  grid-column: 2;
+  grid-row: 2/5;
 }
 
 .img {
@@ -112,14 +122,19 @@ label,
   background: white;
 }
 
-.contenedorCod {
-  position: relative;
+.table-container {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
   background-color: #757575;
+  overflow-x: auto;
+  margin-top: 0;
+}
+
+.table {
+  table-layout: fixed;
+  width: 100%;
+  text-align: start;
+  border-spacing: 2px;
 }
 
 .barcode {
@@ -127,9 +142,10 @@ label,
   height: 60px;
 }
 
-.celda {
-  width: 140px;
+.table__data {
+  width: 100%;
   background: var(--main-modal-color);
+  text-align: center;
   /* 
   Cuando necesitamos dejar la imagen en inline
   usamos esto para centrar
@@ -137,23 +153,34 @@ label,
   text-align: center;*/
 }
 
-.celda img,
-.celda svg {
+.table__data img,
+.table__data svg {
   vertical-align: middle;
 }
 
 .logo {
-  float: left;
-  display: block;
+  /* float: left; */
+
   margin-left: auto;
   margin-right: auto;
   padding-top: 0.8rem;
   height: 40px;
 }
 
-.descripcion {
+.descripcion,
+.form__field-precio {
   display: block;
-  text-align: justify;
-  font-size: 8px;
-  margin-right: 10px;
+  text-align: center;
+  font-size: 9px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.form__field-precio::before {
+  content: "$";
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
 }

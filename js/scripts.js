@@ -2,6 +2,7 @@ import { generarCodigos } from "./tabla.js";
 import { validateCodigo, resetform } from "./validateForm.js";
 
 const d = document;
+let e;
 
 const contenedorCod = d.getElementById("contenedorCod");
 const btnPrint = d.getElementById("btnPrint");
@@ -18,7 +19,8 @@ d.addEventListener("DOMContentLoaded", (e) => {
     "#btnGenerar",
     "#btnPrint",
     "#descripcion",
-    'img'
+    'img',
+    'precio'
   );
 });
 
@@ -41,3 +43,6 @@ fileInput.addEventListener('change', (e)=>{
       console.log(img.getAttribute('src'));
    })
 })
+
+
+
