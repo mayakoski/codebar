@@ -4,7 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Generador de Codigos de Barras.</title>
+  <title>Codebar-ymsa</title>
+  <meta name="description"
+    content="Generador de códigos de barras con ingreso de codigo, descripción, numero de etiquetas y logo propio">
+  <meta name="keywords" content="CodeBar, codebar, Code Bar, Code bar, code bar">
+
   <!-- <link rel="stylesheet" type="text/css" href="/css/imprimir.css" media="print" /> -->
   <link rel="stylesheet" href="css/styles.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -26,12 +30,12 @@
         </div>
 
         <div class="form__field">
-          <label for="descripcion">Descripción: </label>
+          <label for="descripcion" class="form__label">Descripción: </label>
           <input type="text" id="descripcion" class="form__data">
         </div>
 
         <div class="form__field">
-          <label for="etiquetaNum">Numero de etiquetas: </label>
+          <label for="etiquetaNum" class="form__label">Numero de etiquetas: </label>
           <input id="etiquetaNum" type="number" name="etiquetaNum" value="5" step=5 min="5" class="form__data">
         </div>
 
@@ -42,23 +46,27 @@
           <input type="reset" value="Resetear" id="btnReset" disabled class="btn btnColor">
         </div>
 
+        <div class="form__field-precio">
+          <label for="precio" class="form__label">Precio Venta</label>
+          <input type="number" id="precio" class="form__data">
+        </div>
+
         <div class="form__logo">
           <input type="file" id="file" class="file">
           <img src="#" alt="" id="img" class="img">
         </div>
-
       </form>
     </section>
 
     <!-- <section class="section section-container"> -->
-    <div id="contenedorCod" class="contenedorCod">
+    <div id="contenedorCod" class="table-container">
     </div>
     <!-- </section> -->
-
   </main>
-
 
   <script src="./js/scripts.js" type="module"></script>
 </body>
+
+<footer class="footer">contact: ysivizaca@gmail.com +593 984239669</footer>
 
 </html>
