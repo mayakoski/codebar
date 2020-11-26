@@ -9,12 +9,6 @@
   --container-width: 100%;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
 html {
   box-sizing: border-box;
   font-family: var(--main-font), "Raleway";
@@ -25,11 +19,6 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
 }
 
 /* *********     estilos propios     ********** */
@@ -44,10 +33,10 @@ img {
   z-index: 900;
 }
 
-.main {
+/* .main {
   display: flex;
   flex-direction: column;
-}
+} */
 
 .header h1 {
   margin: 0 auto;
@@ -62,22 +51,25 @@ img {
 }
 
 .form {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  /* grid-template-rows: 2; */
-  /* grid-gap: 16px; */
   background: var(--second-color);
+  background-image: url("../assets/img/attachment.jpeg");
   border-radius: 3px;
   color: white;
   font-size: 12px;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
-  width: 100%;
-  margin: 0 auto;
+  width: 100vw;
+}
+
+.grid {
+  display: inline-grid;
+  grid-template-columns: 300px auto;
+  grid-template-rows: 1fr;
 }
 
 .form__label {
-  display: inline;
+  /* display: inline; */
+  background-color: magenta;
 }
 
 .form__field,
@@ -85,26 +77,20 @@ img {
   grid-column: 1/2;
 }
 
-.form__field-precio {
-  grid-column: 2;
-  grid-row: 1/5;
-}
-
 .form__logo {
   grid-column: 2;
   grid-row: 2/5;
+  /* background-color: lime; */
+  display: flex;
+  align-items: center;
 }
 
 .img {
-  background: red;
+  display: block;
   border: 1px solid yellow;
-  max-width: 20%;
-}
-
-.form__field {
-  /* display: table; */
-  display: table-row;
-  /* margin-bottom: 10px; */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 15%;
 }
 
 input,
@@ -143,14 +129,13 @@ label,
 }
 
 .table__data {
-  width: 100%;
+  width: 100px;
   background: var(--main-modal-color);
   text-align: center;
   /* 
   Cuando necesitamos dejar la imagen en inline
-  usamos esto para centrar
-  line-height: 0; 
-  text-align: center;*/
+  usamos esto para centrar*/
+  /* line-height: 0; */
 }
 
 .table__data img,
@@ -159,21 +144,23 @@ label,
 }
 
 .logo {
-  /* float: left; */
-
+  display: inline-block;
   margin-left: auto;
   margin-right: auto;
   padding-top: 0.8rem;
   height: 40px;
 }
 
-.descripcion,
-.form__field-precio {
+.descripcion {
   display: block;
   text-align: center;
   font-size: 9px;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.form__field-precio {
+  display: inline;
 }
 
 .form__field-precio::before {

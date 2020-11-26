@@ -60,7 +60,7 @@ export function generarCodigos(
           descItem.classList.add("descripcion");
           let logo = d.createElement("img");
           (logoLoad.getAttribute('src')=='#') 
-            ? logo.src = "./assets/logo.png"
+            ? logo.src = "./assets/img/logo.png"
             : logo.src = logoLoad.getAttribute('src');
           logo.classList.add("logo");
           let etiquetaCelda = d.createElementNS(
@@ -71,8 +71,8 @@ export function generarCodigos(
           etiquetaCelda.classList.add("barcode");
           celda.appendChild(descItem);
           celda.appendChild(logo);
-          celda.appendChild(etiquetaCelda);
           celda.appendChild(precioVenta);
+          celda.appendChild(etiquetaCelda);
 
           hilera.appendChild(celda);
         }
